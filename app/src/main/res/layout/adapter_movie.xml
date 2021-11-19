@@ -8,13 +8,18 @@
     android:elevation="8dp"
     app:cardCornerRadius="8dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
+<!--    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageview"
         android:layout_width="match_parent"
         android:scaleType="centerCrop"
         android:layout_height="200dp"
         android:src="@drawable/ic_launcher_foreground"
-        android:background="@color/black"/>
+        android:background="@color/black"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/name"
@@ -24,8 +29,65 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="@tools:sample/full_names"
-        android:background="#E1303F9F"
         android:paddingStart="8dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textSize="18sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@tools:sample/full_names"
+        android:paddingStart="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@tools:sample/full_names"
+        android:paddingStart="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <TextView
+            android:id="@+id/adress"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@tools:sample/full_names"
+            android:paddingStart="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@tools:sample/full_names"
+            android:paddingStart="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@tools:sample/full_names"
+            android:paddingStart="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

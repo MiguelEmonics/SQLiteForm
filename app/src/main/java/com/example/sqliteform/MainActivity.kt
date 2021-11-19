@@ -16,6 +16,8 @@ import com.example.sqliteform.database.UserContract
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     companion object {
         val PERMISSIONS_REQUEST_READ_CONTACTS = 100
+        const val VIEW_TYPE_HEADER = 1
+        const val VIEW_TYPE_DETAIL = 2
     }
 
     lateinit var spinnerStates: Spinner
@@ -170,14 +172,22 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         with(cursor) {
             while (moveToNext()) {
                 val username = getString(getColumnIndexOrThrow(UserContract.UserEntry.COLUMN_NAME_USERNAME))
-                data.add(username)
+                val email = getString(getColumnIndexOrThrow(UserContract.UserEntry.COLUMN_NAME_EMAIL))
+                val phone = getString(getColumnIndexOrThrow(UserContract.UserEntry.COLUMN_NAME_PHONE))
+                val address = getString(getColumnIndexOrThrow(UserContract.UserEntry.COLUMN_NAME_ADDRESS))
+                val city = getString(getColumnIndexOrThrow(UserContract.UserEntry.COLUMN_NAME_CITY))
+                val state = getString(getColumnIndexOrThrow(UserContract.UserEntry.COLUMN_NAME_STATE))
+                val userHeader = User(VIEW_TYPE_HEADER, username, "", "", "", "", "", "")
+                val userDetail = User(VIEW_TYPE_DETAIL, username, "", email, phone, address, city, state)
+                data.add(userHeader)
+                data.add(userDetail)
             }
         }
         cursor.close()
         Log.d("DATA FROM DATABASE", data.toString())
         adapter = MainAdapter()
         recyclerView = findViewById(R.id.recyclerview)
-        recyclerView.layoutManager = GridLayoutManager(applicationContext, 2)
+        //recyclerView.layoutManager = GridLayoutManager(applicationContext, 2)
         recyclerView.adapter = adapter
         adapter.setUserList(data)
     }
