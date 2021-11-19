@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">SQLiteForm</string>
+    <string name="register_user_textview">Register User</string>
+    <string name="username_textview">Username</string>
+    <string name="password_textView">Password</string>
+    <string name="email_textView">Email</string>
+    <string name="phone_number_textview">Phone Number</string>
+    <string name="home_address_textView">Home Address</string>
+    <string name="city_textView">City</string>
+    <string name="state_textView">State</string>
+    <string name="submit_form_btn">Submit Form</string>
+    <string name="read_from_database_btn">Read from DataBase</string>
+    <string name="linkify">This is Linkify</string>
+    <string name="textLinkitfyEmail">This is a Email</string>
+    <string name="textLinkifyWeb">This is a URL</string>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+
+    <string-array name="states">
+        <item>State 1</item>
+        <item>State 2</item>
+        <item>State 3</item>
+        <item>State 4</item>
+    </string-array>
+
+    <string-array name="state1">
+        <item>State 1 City 1</item>
+        <item>State 1 City 2</item>
+        <item>State 1 City 3</item>
+        <item>State 1 City 4</item>
+    </string-array>
+
+    <string-array name="state2">
+        <item>State 2 City 1</item>
+        <item>State 2 City 2</item>
+        <item>State 2 City 3</item>
+        <item>State 2 City 4</item>
+    </string-array>
+
+    <string-array name="state3">
+        <item>State 3 City 1</item>
+        <item>State 3 City 2</item>
+        <item>State 3 City 3</item>
+        <item>State 3 City 4</item>
+    </string-array>
+
+    <string-array name="state4">
+        <item>State 4 City 1</item>
+        <item>State 4 City 2</item>
+        <item>State 4 City 3</item>
+        <item>State 4 City 4</item>
+    </string-array>
+</resources>
