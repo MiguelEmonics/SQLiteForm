@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         val PERMISSIONS_REQUEST_READ_CONTACTS = 100
         const val VIEW_TYPE_HEADER = 1
         const val VIEW_TYPE_DETAIL = 2
+        const val VIEW_TYPE_FOOTER = 3
     }
 
     lateinit var spinnerStates: Spinner
@@ -178,9 +179,11 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 val city = getString(getColumnIndexOrThrow(UserContract.UserEntry.COLUMN_NAME_CITY))
                 val state = getString(getColumnIndexOrThrow(UserContract.UserEntry.COLUMN_NAME_STATE))
                 val userHeader = User(VIEW_TYPE_HEADER, username, "", "", "", "", "", "")
-                val userDetail = User(VIEW_TYPE_DETAIL, username, "", email, phone, address, city, state)
+                val userDetail = User(VIEW_TYPE_DETAIL, username, "", "", "", address, city, state)
+                val userContact = User(VIEW_TYPE_FOOTER, "", "", email, phone, "", "", "")
                 data.add(userHeader)
                 data.add(userDetail)
+                data.add(userContact)
             }
         }
         cursor.close()

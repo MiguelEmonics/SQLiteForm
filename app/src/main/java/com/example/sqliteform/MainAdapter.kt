@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sqliteform.databinding.AdapterMovieBinding
 import com.example.sqliteform.databinding.ItemView1Binding
+import com.example.sqliteform.databinding.ItemView2Binding
 
 class MainAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var users = mutableListOf<User>()
@@ -19,7 +20,10 @@ class MainAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         if (viewType == MainActivity.VIEW_TYPE_HEADER) {
             val binding = ItemView1Binding.inflate(inflater, parent, false)
             return SecondHeaderLayout(binding)
-        } else {
+        } else if (viewType == MainActivity.VIEW_TYPE_FOOTER) {
+            val binding = ItemView2Binding.inflate(inflater, parent, false)
+            return FooterHeaderLayout(binding)
+        }else {
             val binding = AdapterMovieBinding.inflate(inflater, parent, false)
             return MainViewHolder(binding)
         }
@@ -30,11 +34,12 @@ class MainAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         if (user.view_type == MainActivity.VIEW_TYPE_HEADER) {
             val header = holder as SecondHeaderLayout
             header.header.textView.text = user.username
+        } else if (user.view_type == MainActivity.VIEW_TYPE_FOOTER) {
+            val footer = holder as FooterHeaderLayout
+            footer.footer.phone.text = user.phone
+            footer.footer.email.text = user.email
         } else {
             val detail = holder as MainViewHolder
-            //detail.binding.name.text = user.username
-            detail.binding.email.text = user.email
-            detail.binding.phone.text = user.phone
             detail.binding.adress.text = user.address
             detail.binding.city.text = user.city
             detail.binding.state.text = user.state
@@ -55,5 +60,9 @@ class MainViewHolder(val binding: AdapterMovieBinding) : RecyclerView.ViewHolder
 }
 
 class SecondHeaderLayout(val header: ItemView1Binding) : RecyclerView.ViewHolder(header.root) {
+
+}
+
+class FooterHeaderLayout(val footer: ItemView2Binding) : RecyclerView.ViewHolder(footer.root) {
 
 }
